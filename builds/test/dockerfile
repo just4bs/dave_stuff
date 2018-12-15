@@ -1,0 +1,9 @@
+FROM centosbase
+
+RUN yum install -y httpd openssh-server which sudo php; yum clean all
+
+CMD systemctl enable httpd; systemctl start httpd
+
+CMD systemctl enable sshd; systemctl start sshd
+
+
