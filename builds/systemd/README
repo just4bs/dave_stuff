@@ -1,21 +1,4 @@
-#Sample httpd container
-#Here we show you how we can create a sample httpd container.
-
-#First create a Dockerfile and setup the required service or services. Systemd can launch multiple services.
-
-FROM centos/systemd
-MAINTAINER "Your Name" <you@example.com>
-RUN yum -y install httpd; yum clean all; systemctl enable httpd.service (for example)
-EXPOSE 80
-CMD ["/usr/sbin/init"]  (this is the last line to get systemd to work)
-
-
-#Then build it.
-
-docker build --rm --no-cache -t httpd .
-
-
-#Launch it.
+#running the systemd container is below.  rememeber to open the needed ports here so you don't have to rebuild.
+#  -OR-  Look at the dockerfile and expose ports.  Remember -P in the run command.
 
 docker run --privileged --name whatever -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 -d  ImageName
-#Finally use it.
