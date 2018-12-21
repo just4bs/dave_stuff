@@ -3,10 +3,11 @@ FROM centosbase
 ENV container docker
 
 RUN yum install -y wget httpd openssh-server which sudo php; yum clean all
- 
-RUN wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
-RUN rpm -Uvh epel-release-latest-7.noarch.rpm
+#Already have this epel in there? 
+#RUN wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
+#RUN rpm -Uvh epel-release-latest-7.noarch.rpm
 
 RUN yum install -y httpd openssh-server which sudo php; yum clean all
 

@@ -1,0 +1,7 @@
+#testing out some ignoring methods.  Looks like *.whatever, or the locla folder that was created like whatever/ can be written
+
+testingfiles/
+
+*.whatever
+
+
