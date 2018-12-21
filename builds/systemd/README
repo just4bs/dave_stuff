@@ -1,0 +1,6 @@
+#running the systemd container is below.  rememeber to open the needed ports here so you don't have to rebuild.
+#  -OR-  Look at the dockerfile and expose ports.  Remember -P in the run command.
+# the volume in this command is named in the dockerfile.  It can be whatever
+
+
+docker run --privileged --name whatever -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 -d  ImageName
